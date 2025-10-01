@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Laboratory Upgrade Project - My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="project-detail">
+        <h2>Computer Laboratory Upgrade Project</h2>
+        <div class="image-gallery">
+            <img src="images/proposal.png" alt="proposedTypology" class="clickable-image">
+            <img src="images/3D.png" alt="3DTypo" class="clickable-image">
+            <img src="images/3D (1).png" alt="3D Typo 2" class="clickable-image">
+            <img src="images/Proposal (1).png" alt="Proposal 2" class="clickable-image">
+            <img src="images/budget.jpg" alt="ProposedBudget" class="clickable-image">
+        </div>
+        <p>Designed and proposed an upgraded network infrastructure for Manapla National High School, addressing issues with overcrowded devices, bandwidth congestion, and environmental risks to equipment. The project improved network performance, reliability, and safety to better support digital learning.<br>
+            <br>
+            Role: Project Lead<br>
+            <br>
+            Key Work:<br>
+            - Designed new physical and logical network topologies for two labs.<br>
+            - Proposed IP-addressing scheme, hardware upgrades (switches, Cat5 cabling, routers)<br>
+            - Produced a budget plan with 5 percent contingency<br>
+            - Created a 3D model of the network layout for a presentation<br>
+        </p>
+        <a href="index.html">Back to Portfolio</a>
+    </section>
+
+    <!-- Modal for image enlargement -->
+    <div id="modal" class="modal">
+        <span class="close" id="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img" alt="Enlarged Image">
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalClose = document.getElementById('modal-close');
+        const images = document.querySelectorAll('.clickable-image');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+    <footer id="contact">
+        <h2>Contact</h2>
+        <p>Email: kevzdelacruz70@gmail.com</p>
+        <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
+    </footer>
+</body>
+</html>
